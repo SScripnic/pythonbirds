@@ -1,10 +1,14 @@
 class Pessoa:
+    olhos = 2
+
     def __init__(self, *filhos, nome=None, idade=35):
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
+
     def cumprimentar(self):
         return f'Olá {id(self)}'
+
 
 if __name__ == "__main__":
     sergio = Pessoa(nome='Sergio')
@@ -20,3 +24,6 @@ if __name__ == "__main__":
     del alexandre.filhos
     print(alexandre.__dict__)
     print(sergio.__dict__)
+    print(Pessoa.olhos)
+    print(sergio.olhos)
+    print(id(Pessoa.olhos), id(alexandre.olhos), id(sergio.olhos))
