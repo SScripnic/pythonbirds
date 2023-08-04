@@ -38,10 +38,12 @@ class Ator():
         :param tempo: o tempo do jogo
         :return: posição x, y do ator
         """
-        if self.foi_lancado():
-            delta_t = tempo - self._tempo_de_lancamento
-            self._calcular_posicao_vertical(delta_t)
-        return super().calcular_posicao(tempo)
+#        if self.foi_lancado():
+#            delta_t = tempo - self._tempo_de_lancamento
+#            self._calcular_posicao_vertical(delta_t)
+#            return super().calcular_posicao(tempo)
+
+        return self.x, self.y
 
     def colidir(self, outro_ator, intervalo=1):
         """
@@ -102,6 +104,7 @@ class Passaro(Ator):
 
         :return: booleano
         """
+
         return not self._tempo_de_lancamento is None
 
     def colidir_com_chao(self):
